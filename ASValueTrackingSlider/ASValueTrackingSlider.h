@@ -45,6 +45,14 @@
 // height padding factor of the popUpView, default is 1.1
 @property (nonatomic) CGFloat popUpViewHeightPaddingFactor;
 
+// Specifies if the slider popup has a fixed width. If YES, it ignores the
+// width padding factor.
+@property (nonatomic) BOOL popUpHasFixedWidth;
+
+// Fixed width for the slider popup. Only takes effect if popUpHasFixedWidth is
+// YES.
+@property (nonatomic) CGFloat popUpFixedWidth;
+
 // changes the left handside of the UISlider track to match current popUpView color
 // the track color alpha is always set to 1.0, even if popUpView color is less than 1.0
 @property (nonatomic) BOOL autoAdjustTrackColor; // (default is YES)

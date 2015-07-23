@@ -149,6 +149,22 @@
     self.popUpView.heightPaddingFactor = factor;
 }
 
+- (BOOL)popUpHasFixedWidth {
+    return self.popUpView.hasFixedWidth;
+}
+
+- (void)setPopUpHasFixedWidth:(BOOL)popUpHasFixedWidth {
+    self.popUpView.hasFixedWidth = popUpHasFixedWidth;
+}
+
+- (CGFloat)popUpFixedWidth {
+    return self.popUpView.fixedWidth;
+}
+
+- (void)setPopUpFixedWidth:(CGFloat)popUpFixedWidth {
+    self.popUpView.fixedWidth = popUpFixedWidth;
+}
+
 - (CGFloat)popUpViewHeightPaddingFactor
 {
     return self.popUpView.heightPaddingFactor;

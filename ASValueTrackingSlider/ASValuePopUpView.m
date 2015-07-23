@@ -79,6 +79,8 @@ NSString *const FillColorAnimation = @"fillColor";
         _arrowLength = 13.0;
         _widthPaddingFactor = 1.15;
         _heightPaddingFactor = 1.1;
+        _hasFixedWidth = NO;
+        _fixedWidth = 50.0;
         
         _textLayer = [CATextLayer layer];
         _textLayer.alignmentMode = kCAAlignmentCenter;
@@ -211,7 +213,13 @@ NSString *const FillColorAnimation = @"fillColor";
 {
     [[_attributedString mutableString] setString:string];
     CGFloat w, h;
-    w = ceilf([_attributedString size].width * _widthPaddingFactor);
+    
+    if (self.hasFixedWidth) {
+        w = self.fixedWidth;
+    } else {
+        w = ceilf([_attributedString size].width * _widthPaddingFactor);
+    }
+
     h = ceilf(([_attributedString size].height * _heightPaddingFactor) + _arrowLength);
     return CGSizeMake(w, h);
 }
